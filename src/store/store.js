@@ -8,9 +8,7 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        movies: [
-            {title: 'Movie default', desc: 'Movie default desc.'}
-        ]
+        movies: []
     },
     getters: Getters,
     mutations: Mutations,

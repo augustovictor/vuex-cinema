@@ -1,5 +1,5 @@
 export default {
     setMovies(state, movies) {
-        state.movies.push(movies);
+        state.movies.push(...movies);
     }
 }
