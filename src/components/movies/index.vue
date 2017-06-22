@@ -1,5 +1,6 @@
 <template>
     <div>
+        <messages></messages>
         <h1>Movies list</h1>
         <ul>
             <li v-for="movie in movies">
@@ -15,8 +16,12 @@
 
 <script>
 import {mapGetters} from 'vuex'
+import MessagesHelper from '../helpers/messages.vue'
 
 export default {
+    components: {
+        'messages':MessagesHelper
+    },
     methods: {
         addMovies() {
             this.$store.dispatch('fetchMovies');

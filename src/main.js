@@ -11,6 +11,11 @@ const router = new VueRouter({
     mode: 'history'
 });
 
+router.beforeEach((to, from, next) => {
+    store.state.messages = [];
+    next();
+});
+
 new Vue({
   el: '#app',
   router: router,
