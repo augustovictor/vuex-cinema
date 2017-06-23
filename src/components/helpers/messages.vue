@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="notification">
+        <button class="delete"></button>
         <div v-for="msg in messages">
             Type: {{msg.type}}. Message: {{msg.content}}
         </div>

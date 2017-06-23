@@ -1,15 +1,21 @@
 <template>
     <div>
         <messages></messages>
-        <h1>Movies list</h1>
-        <ul>
-            <li v-for="movie in movies">
-                <h3>Title: {{movie.title}}</h3>
-                <h3>Description</h3>
-                <p>{{movie.description}}</p>
-
-            </li>
-        </ul>
+        <h1 class="title">Movies list</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="movie in movies">
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.description}}</td>
+                </tr>
+            </tbody>
+        </table>
         <button class="button is-primary" @click.prevent="addMovies">Add Movies</button>
     </div>
 </template>

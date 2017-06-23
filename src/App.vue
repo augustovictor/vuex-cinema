@@ -1,7 +1,9 @@
-<template class="columns">
-    <div class="column">
+<template class="container">
+    <div>
         <app-header></app-header>
-        <router-view></router-view>
+        <div class="column">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
