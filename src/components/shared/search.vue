@@ -2,12 +2,12 @@
     <div>
         <div class="columns">
             <div class="column is-4">
-                <input v-model="search" @keyup="filterChanged" class="input" type="text" placeholder="Filter movies...">
+                <input v-model="search" @keyup="filterChanged" class="input" type="text" placeholder="Type here to filter...">
             </div>
         </div>
         <div v-if="!filteredData.length && search.length" class="columns">
             <div class="column is-12">
-                <i>No movies match '{{this.search}}'</i>
+                <i>No match for '{{this.search}}'</i>
             </div>
         </div>
     </div>
