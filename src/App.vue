@@ -1,6 +1,7 @@
 <template class="container">
     <div>
         <app-header></app-header>
+        <messages></messages>
         <div class="column">
             <router-view></router-view>
         </div>
@@ -9,10 +10,12 @@
 
 <script>
 import Header from './components/shared/header.vue'
+import MessagesHelper from './components/helpers/messages.vue'
 
 export default {
     components: {
-        'app-header': Header
+        'app-header': Header,
+        'messages': MessagesHelper
     }
 }
 </script>

@@ -4,5 +4,8 @@ export default {
     },
     getMovies(state) {
         return state.movies;
-    }   
+    },
+    getMovie(state) {
+        return state.movie;
+    }
 }

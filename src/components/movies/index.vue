@@ -25,7 +25,9 @@
                 </thead>
                 <tbody>
                     <tr v-for="movie in filteredMovies">
-                        <td>{{movie.title}}</td>
+                        <td>
+                            <router-link :to="`/movies/${movie._id}`">{{movie.title}}</router-link>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -34,9 +36,8 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
 import MessagesHelper from '../helpers/messages.vue'
-import SearchComponent from '../../mixins/search'
 import SearchComponentApp from '../shared/search.vue'
 
 export default {

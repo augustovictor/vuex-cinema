@@ -11,6 +11,15 @@ export default {
             context.commit('setMessages', [{type: 'error', content: err.message}]);
         });
     },
+    fetchMovieById(context, movieId) {
+        api.get(`/movies/${movieId}`)
+        .then(res => {
+            context.commit('setMovie', res.data[0]);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    },
     newMovie(context, movie) {
         api.post('/movies', movie)
         .then(res => {
