@@ -8,5 +8,8 @@ export default {
     },
     setMovies(state, movies) {
         state.movies.push(...movies);
+    },
+    clearMovies(state) {
+        state.movies = [];
     }
 }

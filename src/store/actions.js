@@ -7,8 +7,18 @@ export default {
             context.commit('setMovies', res.data);
         })
         .catch(err => {
-            console.log(err);
+            console.log({err});
             context.commit('setMessages', [{type: 'error', content: err.message}]);
         });
-    }    
+    },
+    newMovie(context, movie) {
+        api.post('/movies', movie)
+        .then(res => {
+            context.commit('setMessages', [{type: 'success', content: 'Movie created'}]);
+        })
+        .catch(err => {
+            console.log({err});
+            context.commit('setMessages', [{type: 'error', content: err.message}])
+        });
+    }
 }
