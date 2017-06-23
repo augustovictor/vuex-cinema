@@ -1,5 +1,5 @@
-<template>
-    <div>
+<template class="columns">
+    <div class="column">
         <app-header></app-header>
         <router-view></router-view>
     </div>
@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style>
+@import '../node_modules/bulma/css/bulma.css';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,16 +28,6 @@ export default {
 
 h1, h2 {
   font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
 }
 
 a {

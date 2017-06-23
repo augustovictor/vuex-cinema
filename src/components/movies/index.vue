@@ -10,7 +10,7 @@
 
             </li>
         </ul>
-        <button @click.prevent="addMovies">Add Movies</button>
+        <button class="button is-primary" @click.prevent="addMovies">Add Movies</button>
     </div>
 </template>
 

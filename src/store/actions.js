@@ -7,6 +7,7 @@ export default {
             context.commit('setMovies', res.data);
         })
         .catch(err => {
+            console.log(err.response)
             context.commit('setMessages', [{type: 'error', content: err}]);
         });
     }    
