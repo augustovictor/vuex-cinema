@@ -11,7 +11,6 @@
 export default {
     computed: {
         messages() {
-            console.log('set messages in helper')
             return this.$store.getters.getMessages;
         }
     }
