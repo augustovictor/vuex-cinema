@@ -2,7 +2,7 @@
     <div>
         <div class="columns">
             <div class="column is-4">
-                <input v-model="search" @keyup="filterChanged" class="input" type="text" placeholder="Type here to filter...">
+                <input v-model="search" @keyup="filterChanged" @keydown="filterChanged" class="input" type="text" placeholder="Type here to filter...">
             </div>
         </div>
         <div v-if="!filteredData.length && search.length" class="columns">

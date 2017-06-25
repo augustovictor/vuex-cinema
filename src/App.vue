@@ -1,8 +1,8 @@
 <template class="container">
     <div>
         <app-header></app-header>
-        <messages></messages>
         <div class="column">
+           <messages></messages>
             <router-view></router-view>
         </div>
     </div>

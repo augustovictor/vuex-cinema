@@ -1,6 +1,5 @@
 <template>
     <div>
-        <messages></messages>
         <div class="columns">
             <h1 class="title column">
                 Movies list [{{filteredMovies.length}}]
@@ -8,9 +7,9 @@
         </div>
 
         <div class="columns">
-            <div class="column ">
+            <div class="column">
                 <button class="button is-primary" @click.prevent="refreshMovies">Refresh <i class="fa fa-refresh"></i></button>
-                <button class="button is-primary" @click.prevent.once="addMovies">Fetch Movies</button>
+                <button class="button is-primary" @click.prevent.once="addMovies" :disabled="movies.length ? true : false">Fetch Movies</button>
             </div>
         </div>
         
@@ -27,6 +26,7 @@
                     <tr v-for="movie in filteredMovies">
                         <td>
                             <router-link :to="`/movies/${movie._id}`">{{movie.title}}</router-link>
+                            <button @click.prevent.once="delMovie(movie._id)" class="button is-danger is-pulled-right">Del</button>
                         </td>
                     </tr>
                 </tbody>
@@ -58,9 +58,13 @@ export default {
         refreshMovies() {
             this.$store.commit('clearMovies');
             this.$store.dispatch('fetchMovies');
+            this.$store.commit('setMessages', [{type: 'success', content: 'Movies refreshed'}]);
         },
         setFilteredResults(filteredResults) {
             this.filteredMovies = filteredResults;
+        },
+        delMovie(movieId) {
+            this.$store.dispatch('delMovie', movieId);
         }
     },
     computed: {

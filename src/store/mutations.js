@@ -14,5 +14,11 @@ export default {
     },
     clearMovies(state) {
         state.movies = [];
+    },
+    removeMovie(state, movieId) {
+        state.movies = state.movies.filter(movie => {
+            return movie._id != movieId;
+        })
+        console.log(state.movies);
     }
 }

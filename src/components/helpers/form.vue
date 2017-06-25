@@ -1,6 +1,5 @@
 <template>
     <div>
-        <messages />
         <form>
             <div id="form-header">
                 <slot name="form-header"></slot>
